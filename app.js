@@ -20,7 +20,7 @@ document.getElementById('join-form').addEventListener('submit', async (e)=>{
 
 // تحميل البيئات (من الملف + من التخزين المحلي)
 async function loadCommunities(){
-  const res = await fetch('data/communities.json');
+  const res = await fetch('communities.json');
   const base = await res.json();
   const custom = JSON.parse(localStorage.getItem('customCommunities') || '[]');
   return [...base, ...custom];
